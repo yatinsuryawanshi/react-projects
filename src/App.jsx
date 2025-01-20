@@ -14,7 +14,7 @@ const sampleItems = [
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (item) => {
+  const handleAddToCart = (item) => {
     setCartItems([...cartItems, item]);
   };
 
@@ -26,7 +26,7 @@ function App() {
 
   const proceedToCheckout = () => {
     alert("Order has been placed successfully!");
-    setCartItems([]);  // Clear the cart after placing order
+    setCartItems([]); // Clear the cart after placing order
   };
 
   return (
@@ -38,7 +38,7 @@ function App() {
           {sampleItems.map((item) => (
             <li key={item.id}>
               {item.name} - ₹{item.price}
-              <button onClick={() => addToCart(item)}>Add to Cart</button>
+              <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
             </li>
           ))}
         </ul>
